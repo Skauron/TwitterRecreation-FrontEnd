@@ -21,7 +21,7 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("https://git.heroku.com/twitter-api-skauron.git/posts", data, {
+      .post("https://twitter-api-skauron-b58f25467d65.herokuapp.com/posts", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {

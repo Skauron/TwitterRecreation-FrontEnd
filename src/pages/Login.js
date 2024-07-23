@@ -12,7 +12,7 @@ function Login() {
 
   const login = () => {
     const data = { username: username, password: password };
-    axios.post("https://git.heroku.com/twitter-api-skauron.git/auth/login", data).then((response) => {
+    axios.post("https://twitter-api-skauron-b58f25467d65.herokuapp.com/auth/login", data).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
       } else {

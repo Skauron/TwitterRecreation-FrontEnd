@@ -16,7 +16,7 @@ function Home() {
       navigate(`/login`);
     } else {
       axios
-        .get("https://git.heroku.com/twitter-api-skauron.git/posts", {
+        .get("https://twitter-api-skauron-b58f25467d65.herokuapp.com/posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
@@ -33,7 +33,7 @@ function Home() {
   const likeAPOst = (postId) => {
     axios
       .post(
-        "https://git.heroku.com/twitter-api-skauron.git/likes",
+        "https://twitter-api-skauron-b58f25467d65.herokuapp.com/likes",
         { PostId: postId },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )

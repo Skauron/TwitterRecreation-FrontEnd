@@ -12,11 +12,11 @@ function Profile() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://git.heroku.com/twitter-api-skauron.git/auth/basicinfo/${id}`).then((response) => {
+    axios.get(`https://twitter-api-skauron-b58f25467d65.herokuapp.com/auth/basicinfo/${id}`).then((response) => {
       setUsername(response.data.username);
     });
 
-    axios.get(`https://git.heroku.com/twitter-api-skauron.git/posts/byuserId/${id}`).then((response) => {
+    axios.get(`https://twitter-api-skauron-b58f25467d65.herokuapp.com/posts/byuserId/${id}`).then((response) => {
       setListOfPosts(response.data);
     });
   }, []);

@@ -14,11 +14,11 @@ function Post() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://git.heroku.com/twitter-api-skauron.git/posts/byId/${id}`).then((response) => {
+    axios.get(`https://twitter-api-skauron-b58f25467d65.herokuapp.com/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
     });
 
-    axios.get(`https://git.heroku.com/twitter-api-skauron.git/comments/${id}`).then((response) => {
+    axios.get(`https://twitter-api-skauron-b58f25467d65.herokuapp.com/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, []);
@@ -26,7 +26,7 @@ function Post() {
   const addComment = () => {
     axios
       .post(
-        "https://git.heroku.com/twitter-api-skauron.git/comments",
+        "https://twitter-api-skauron-b58f25467d65.herokuapp.com/comments",
         {
           commentBody: newComment,
           PostId: id,
@@ -53,7 +53,7 @@ function Post() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`https://git.heroku.com/twitter-api-skauron.git/comments/${id}`, {
+      .delete(`https://twitter-api-skauron-b58f25467d65.herokuapp.com/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -67,7 +67,7 @@ function Post() {
 
   const deletePost = (id) => {
     axios
-      .delete(`https://git.heroku.com/twitter-api-skauron.git/posts/${id}`, {
+      .delete(`https://twitter-api-skauron-b58f25467d65.herokuapp.com/posts/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -79,7 +79,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Enter new title: ");
       axios.put(
-        "https://git.heroku.com/twitter-api-skauron.git/posts/title",
+        "https://twitter-api-skauron-b58f25467d65.herokuapp.com/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -92,7 +92,7 @@ function Post() {
     } else {
       let newText = prompt("Enter new text: ");
       axios.put(
-        "https://git.heroku.com/twitter-api-skauron.git/posts/postText",
+        "https://twitter-api-skauron-b58f25467d65.herokuapp.com/posts/postText",
         {
           newText: newText,
           id: id,
