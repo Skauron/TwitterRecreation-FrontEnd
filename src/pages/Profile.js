@@ -12,11 +12,11 @@ function Profile() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/auth/basicinfo/${id}`).then((response) => {
+    axios.get(`https://git.heroku.com/twitter-api-skauron.git/auth/basicinfo/${id}`).then((response) => {
       setUsername(response.data.username);
     });
 
-    axios.get(`http://localhost:3001/posts/byuserId/${id}`).then((response) => {
+    axios.get(`https://git.heroku.com/twitter-api-skauron.git/posts/byuserId/${id}`).then((response) => {
       setListOfPosts(response.data);
     });
   }, []);

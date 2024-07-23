@@ -15,7 +15,7 @@ const validationSchema = Yup.object().shape({
 
 function Registration() {
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/auth", data)
+    axios.post("https://git.heroku.com/twitter-api-skauron.git/auth", data)
     .then(() => {
         console.log(data);
     })

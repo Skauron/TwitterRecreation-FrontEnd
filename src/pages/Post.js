@@ -14,11 +14,11 @@ function Post() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+    axios.get(`https://git.heroku.com/twitter-api-skauron.git/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
     });
 
-    axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
+    axios.get(`https://git.heroku.com/twitter-api-skauron.git/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, []);
@@ -26,7 +26,7 @@ function Post() {
   const addComment = () => {
     axios
       .post(
-        "http://localhost:3001/comments",
+        "https://git.heroku.com/twitter-api-skauron.git/comments",
         {
           commentBody: newComment,
           PostId: id,
@@ -53,7 +53,7 @@ function Post() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`http://localhost:3001/comments/${id}`, {
+      .delete(`https://git.heroku.com/twitter-api-skauron.git/comments/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -67,7 +67,7 @@ function Post() {
 
   const deletePost = (id) => {
     axios
-      .delete(`http://localhost:3001/posts/${id}`, {
+      .delete(`https://git.heroku.com/twitter-api-skauron.git/posts/${id}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -79,7 +79,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Enter new title: ");
       axios.put(
-        "http://localhost:3001/posts/title",
+        "https://git.heroku.com/twitter-api-skauron.git/posts/title",
         {
           newTitle: newTitle,
           id: id,
@@ -92,7 +92,7 @@ function Post() {
     } else {
       let newText = prompt("Enter new text: ");
       axios.put(
-        "http://localhost:3001/posts/postText",
+        "https://git.heroku.com/twitter-api-skauron.git/posts/postText",
         {
           newText: newText,
           id: id,

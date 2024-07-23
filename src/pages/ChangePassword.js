@@ -9,7 +9,7 @@ function ChangePassword() {
 
   const changepassword = () => {
     axios.put(
-      "http://localhost:3001/auth/changepassword",
+      "https://git.heroku.com/twitter-api-skauron.git/auth/changepassword",
       {
         oldpassword: oldPassword,
         newpassword: newPassword,

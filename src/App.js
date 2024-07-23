@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/auth/auth", {
+      .get("https://git.heroku.com/twitter-api-skauron.git/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

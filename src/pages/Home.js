@@ -16,7 +16,7 @@ function Home() {
       navigate(`/login`);
     } else {
       axios
-        .get("http://localhost:3001/posts", {
+        .get("https://git.heroku.com/twitter-api-skauron.git/posts", {
           headers: { accessToken: localStorage.getItem("accessToken") },
         })
         .then((response) => {
@@ -33,7 +33,7 @@ function Home() {
   const likeAPOst = (postId) => {
     axios
       .post(
-        "http://localhost:3001/likes",
+        "https://git.heroku.com/twitter-api-skauron.git/likes",
         { PostId: postId },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )
